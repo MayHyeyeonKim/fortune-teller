@@ -36,15 +36,8 @@ def result():
         print(userName)
         print(color)
         print(number)
-        colors = {
-          "red": "빨간",
-          "green": "푸른"
-          
-        }
-        numbers = {
-          "1": "하루",
-          "2": "사과"
-        }
+        colors = {"red": "빨간", "green": "푸른", "blue": "파란", "yellow": "노란"}
+        numbers = {"1": "하루", "2": "사과", "3": "바나나", "4": "키위", "5": "자몽"}
         fortune = f"{colors[color]} {numbers[number]}"
         '''
       "colors":[{"key":"red","value":"빨간"},
@@ -59,13 +52,12 @@ def result():
                                                {"key":"5","value":"자몽"}]
         '''
         return render_template('result.html',
-                           user={
+                               user={
                                    "name": userName,
-                             "fortune": fortune,
-                               }
-                           )
+                                   "fortune": fortune,
+                               })
     else:
         return "Handle GET request"
-  
+
 
 app.run(host='0.0.0.0', port=81)
