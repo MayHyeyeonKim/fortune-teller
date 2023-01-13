@@ -7,19 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  {{user.color}}와 {{user.number}}를 선택한 {{user.name}}님
-
-
-  {% for i in range(user.colors|length) %}
-     {% for j in range(user.numbers|length) %}
-        {% if user.color == user.colors[i].key and
-              user.number == user.numbers[j].key %}
-        <div>{{user.colors[i].value}} {{user.numbers[j].value}}  </div>
-        {% endif %}
-    {% endfor %}
-  {% endfor %}
-
   
+ {{user.name}}: {{user.fortune}}
+
+
   
 </body>
 </html>

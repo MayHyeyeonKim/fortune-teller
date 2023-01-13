@@ -36,12 +36,18 @@ def result():
         print(userName)
         print(color)
         print(number)
-        return render_template('result.html',
-                           user={
-                                   "name": userName,
-                                   "color": color,
-                                   "number": number,
-                                   "colors":[{"key":"red","value":"빨간"},
+        colors = {
+          "red": "빨간",
+          "green": "푸른"
+          
+        }
+        numbers = {
+          "1": "하루",
+          "2": "사과"
+        }
+        fortune = f"{colors[color]} {numbers[number]}"
+        '''
+      "colors":[{"key":"red","value":"빨간"},
                                              {"key":"green","value":"푸른"},
                                              {"key":"blue","value":"파란"},
                                              {"key":"yellow","value":"노란"}
@@ -51,7 +57,11 @@ def result():
                                                {"key":"3","value":"바나나"},
                                                {"key":"4","value":"키위"},
                                                {"key":"5","value":"자몽"}]
-                            
+        '''
+        return render_template('result.html',
+                           user={
+                                   "name": userName,
+                             "fortune": fortune,
                                }
                            )
     else:
